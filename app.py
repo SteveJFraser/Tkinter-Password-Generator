@@ -8,14 +8,14 @@ with open("pwords.txt", "a+"):
     pass
 
 
-# ---- open the pwords.txt file for viewing etc ----
+# ---- open the pwords.txt file for viewing or printing ----
 def open_text():
     filename = "pwords.txt"
     # os.system(filename)
     webbrowser.open(filename)
 
 
-# --- open the file and write empty string ---
+# --- open the file and write empty string to delete all passwords ---
 def clear_txt_file():
     with open("pwords.txt", "w") as clear:
         clear.write("")
@@ -114,7 +114,7 @@ number_input = tk.Entry(right_frame,
                         textvariable=number_of_numbers,
                         font=("Arial", 14))
 number_input.pack()
-# ------- submit button ---------
+# ------- Add Password button ---------
 sub_btn = tk.Button(right_frame,
                     text="Create Password",
                     command=generate_pword,
@@ -123,7 +123,7 @@ sub_btn = tk.Button(right_frame,
                     background="#6b7280",
                     foreground="#0f172a")
 sub_btn.pack()
-# ------- delete passwords from the text file -------
+# ------- delete all passwords from the text file -------
 delete_all_passwords = tk.Button(right_frame,
                                  text="Delete all passwords",
                                  command=clear_txt_file,
